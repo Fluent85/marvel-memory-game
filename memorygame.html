@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equip="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="./assets/css/memorygame.css">
+
+    <title>Memory Game</title>
+</head>
+
+<body>
+    div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-labelledby="winnerModal-label">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="winnerModal-label">We Have a Winner!</h4>
+            </div>
+            <div class="modal-body">
+                <p id="winnerText"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="init(), $rating.removeClass('fa-star-o').addClass('fa-star'); " class="btn btn-default" data-dismiss="modal">Go Again!</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Marvel Memory Matching Game</h1>
+        </header>
+        <section class="score-panel">
+            <ul class="stars">
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+            </ul>
+            <span class="moves">0</span> Moves | Time:
+            <span class="timer">0</span> s
+            <div class="restart">
+                <i class="fa fa-repeat"></i>
+            </div>
+        </section>
+
+        <section class="memory-game">
+            <div class="memory-card" data-framework="marvel">
+                <img class="front-face" src="./assets/img/marvel.png" alt="marvel" />
+                <img class="back-face" src="./assets/img/Blackpanther.jpg" alt="Blackpanther" />
+            </div>
+            <div class="memory-card" data-framework="marvel">
+                <img class="front-face" src="./assets/img/marvel.png" alt="marvel" />
+                <img class="back-face" src="./assets/img/Blackpanther.jpg" alt="Blackpanther" />
+            </div>
+
+            <div class="memory-card" data-framework="Killmonger">
+                <img class="front-face" src="./assets/img/Killmonger.jpg" alt="Killmonger" />
+                <img class="back-face" src="./assets/img/Goldpanther.jpg" alt="Goldpanther" />
+            </div>
+            <div class="memory-card" data-framework="Killmonger">
+                <img class="front-face" src="./assets/img/Killmonger.jpg" alt="Killmonger" />
+                <img class="back-face" src="./assets/img/Goldpanther.jpg" alt="Goldpanther" />
+            </div>
+
+            <div class="memory-card" data-framework="captainamerica">
+                <img class="front-face" src="./assets/img/captainamerica.jpg" alt="captainamerica" />
+                <img class="back-face" src="./assets/img/Redskull.jpg" alt="Redskull" />
+            </div>
+            <div class="memory-card" data-framework="captainamerica">
+                <img class="front-face" src="./assets/img/captainamerica.jpg" alt="captainamerica" />
+                <img class="back-face" src="./assets/img/Redskull.jpg" alt="Redskull" />
+            </div>
+
+            <div class="memory-card" data-framework="spiderman">
+                <img class="front-face" src="./assets/img/spiderman.jpg" alt="spiderman" />
+                <img class="back-face" src="./assets/img/venom.jpg" alt="venom" />
+            </div>
+            <div class="memory-card" data-framework="spiderman">
+                <img class="front-face" src="./assets/img/spiderman.jpg" alt="spiderman" />
+                <img class="back-face" src="./assets/img/venom.jpg" alt="venom" />
+            </div>
+
+            <div class="memory-card" data-framework="wolverine">
+                <img class="front-face" src="./assets/img/wolverine.jpg" alt="wolverine" />
+                <img class="back-face" src="./assets/img/Sabretooth.jpg" alt="Sabretooth" />
+            </div>
+            <div class="memory-card" data-framework="wolverine">
+                <img class="front-face" src="./assets/img/wolverine.jpg" alt="wolverine" />
+                <img class="back-face" src="./assets/img/Sabretooth.jpg" alt="Sabretooth" />
+            </div>
+
+            <div class="memory-card" data-framework="captainmarvel">
+                <img class="front-face" src="./assets/img/captainmarvel.jpg" alt="captainmarvel" />
+                <img class="back-face" src="./assets/img/Kree.jpg" alt="Kree" />
+            </div>
+            <div class="memory-card" data-framework="captainmarvel">
+                <img class="front-face" src="./assets/img/captainmarvel.jpg" alt="captainmarvel" />
+                <img class="back-face" src="./assets/img/Kree.jpg" alt="Kree" />
+            </div>
+
+            <div class="memory-card" data-framework="marvel">
+                <img class="front-face" src="./assets/img/marvel.png" alt="marvel" />
+                <img class="back-face" src="./assets/img/Blackpanther.jpg" alt="Blackpanther" />
+            </div>
+            <div class="memory-card" data-framework="marvel">
+                <img class="front-face" src="./assets/img/marvel.png" alt="marvel" />
+                <img class="back-face" src="./assets/img/Blackpanther.jpg" alt="Blackpanther" />
+            </div>
+
+            <div class="memory-card" data-framework="Killmonger">
+                <img class="front-face" src="./assets/img/Killmonger.jpg" alt="Killmonger" />
+                <img class="back-face" src="./assets/img/Goldpanther.jpg" alt="Goldpanther" />
+            </div>
+            <div class="memory-card" data-framework="Killmonger">
+                <img class="front-face" src="./assets/img/Killmonger.jpg" alt="Killmonger" />
+                <img class="back-face" src="./assets/img/Goldpanther.jpg" alt="Goldpanther" />
+            </div>
+        </section>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+        <script src="./assets/js/memory.js"></script>
+</body>
+
+</html>
